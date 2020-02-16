@@ -67,14 +67,12 @@ public class ExamenParcial2ºEvalMartinJesusMañasRivas {
             grupoAlumnos.mostrarAlumnosSuspensos();
             break;
         }
-        guardarProductosAFichero();
-
       } catch (Exception e) {
         System.out.println("Error al introducir un dato.");
       }
 
     } while (opcion != 0);
-
+    guardarProductosAFichero();
   }
 
   /**
@@ -229,8 +227,8 @@ public class ExamenParcial2ºEvalMartinJesusMañasRivas {
     }
 
   }
-  
-    public static GrupoAlumnos cargarProductosDesdeArchivo() {
+
+  public static GrupoAlumnos cargarProductosDesdeArchivo() {
     GrupoAlumnos gA = null;
     ObjectInputStream entrada;
     File ruta = new File("C:\\GrupoAlumnos");

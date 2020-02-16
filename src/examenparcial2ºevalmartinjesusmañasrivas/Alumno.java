@@ -50,7 +50,7 @@ public class Alumno extends Persona implements Serializable, Comparable {
   }
 
   public void mostrarAlumno() {
-    System.out.println("Alumno|-> " + "id:" + this.getId() + " DNI:" + this.getDni() + " Nombre:" + this.getNombre() + " Apellidos:" + this.getApellidos() + "Dirección" + this.getDireccion());
+    System.out.println("\nAlumno|-> " + "id:" + this.getId() + " DNI:" + this.getDni() + " Nombre:" + this.getNombre() + " Apellidos:" + this.getApellidos() + "Dirección" + this.getDireccion());
     System.out.println("-Materias");
     mostrarMaterias();
   }
@@ -76,7 +76,7 @@ public class Alumno extends Persona implements Serializable, Comparable {
     if (!materias.isEmpty()) { //Si no esta vacio..
       for (int i = 0; i < materias.size() && aprobado; i++) { //El bucle recorre todas las materias o hasta que haya algun suspenso.
         Materia m = materias.get(i); //Sacamos una materia hasta llegar al final o que haya una suspensa
-        if ((m.getEval1() < 5) && (m.getEval2() < 5) && (m.getEval3() < 5)) { // Si en alguna evaluación alguna materia esta por debajo de 5 estara suspenso.
+        if ((m.getEval1() < 5) || (m.getEval2() < 5) || (m.getEval3() < 5)) { // Si en alguna evaluación alguna materia esta por debajo de 5 estara suspenso.
           aprobado = false;
         }
       }
